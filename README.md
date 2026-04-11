@@ -1,0 +1,27 @@
+# dotfiles 🔧
+
+My personal development environment configuration for Arch Linux.
+
+## Purpose
+
+This repository exists to persistently store my personal environment configuration and make it easy to replicate my setup across machines.
+
+## Key Components
+
+The most important pieces that make this setup work for me:
+
+- **tmux** — Session and window management
+- **Neovim** — Primary editor with LSP support and minimal configuration
+- **zsh** — Shell with custom aliases and utilities
+
+## Installation
+
+Clone the repository and create symlinks as needed:
+
+```bash
+git clone https://github.com/yarso-su/dotfiles.git ~/dotfiles
+# Create symlinks manually based on your preferences
+```
+
+> [!NOTE]
+> All content in this repository is free to use. Feel free to use it as a reference or integrate it directly into your own configuration.
