@@ -15,6 +15,9 @@ export ANDROID_HOME=/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+#dart
+export PATH="$HOME/.pub-cache/bin:$PATH"
+
 export PATH="/home/yarso/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
@@ -37,3 +40,9 @@ export KEYTIMEOUT=1
 # Added by flyctl installer
 export FLYCTL_INSTALL="/home/yarso/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/yarso/.dart-cli-completion/zsh-config.zsh ]] && . /home/yarso/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
