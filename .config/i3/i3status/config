@@ -14,9 +14,9 @@ wireless _first_ {
 }
 
 memory {
-  format = "M: %used"
+  format = "%used"
   threshold_degraded = "10%"
-  format_degraded = "M: <span color='#FF0000'>%free</span>"
+  format_degraded = "<span color='#FF0000'>%free</span>"
 }
 
 tztime local {
@@ -25,8 +25,8 @@ tztime local {
 
  battery all {
    format = "%status %percentage"
-   status_chr = "CR"
-   status_bat = "BT"
-   status_full = "FL"
+   status_chr = "C"
+   status_bat = "B"
+   status_full = "F"
    low_threshold = 10
  }

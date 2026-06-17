@@ -10,11 +10,11 @@ return function()
       if vim.v.count > 0 then
         count = 0
       end
-      if count >= 5 then
+      if count >= 3 then
         ok, id = pcall(vim.notify, "Hold it Cowboy!", vim.log.levels.WARN, {
           replace = id,
           keep = function()
-            return count >= 5
+            return count >= 3
           end,
         })
         if not ok then

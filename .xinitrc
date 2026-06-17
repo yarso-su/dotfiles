@@ -3,9 +3,6 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 picom -b &
-feh --bg-fill ~/Pictures/Wallpapers/wp47.jpg &
+feh --bg-fill ~/Pictures/Wallpapers/wp47.jpg
 
-eval $(ssh-agent -s)
-
-exec i3
-
+exec dbus-run-session i3
