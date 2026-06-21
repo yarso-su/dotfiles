@@ -51,6 +51,26 @@ export FLYCTL_INSTALL="/home/yarso/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 
+# github key
+SSH_ENV="$HOME/.ssh/agent_env"
+
+start_agent() {
+    ssh-agent -s > "$SSH_ENV"
+    chmod 600 "$SSH_ENV"
+    source "$SSH_ENV" > /dev/null
+    ssh-add ~/.ssh/github_ed25519
+}
+
+if [ -f "$SSH_ENV" ]; then
+    source "$SSH_ENV" > /dev/null
+    if ! kill -0 "$SSH_AGENT_PID" 2>/dev/null; then
+        start_agent
+    fi
+else
+    start_agent
+fi
+
+
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/yarso/.dart-cli-completion/zsh-config.zsh ]] && . /home/yarso/.dart-cli-completion/zsh-config.zsh || true
