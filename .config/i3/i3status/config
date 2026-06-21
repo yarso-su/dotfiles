@@ -29,4 +29,5 @@ tztime local {
    status_bat = "B"
    status_full = "F"
    low_threshold = 10
+   last_full_capacity = true
  }

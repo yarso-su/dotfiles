@@ -5,4 +5,7 @@
 picom -b &
 feh --bg-fill ~/Pictures/Wallpapers/wp47.jpg
 
-exec dbus-run-session i3
+systemctl --user import-environment DISPLAY XAUTHORITY
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
+
+exec i3

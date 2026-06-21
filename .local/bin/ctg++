@@ -1,0 +1,31 @@
+#!/bin/bash
+# Compilation script for contests
+# Usage: ctg++ <source.cpp>
+
+if [ $# -eq 0 ]; then
+    echo "Usage: ctg++ <source.cpp>"
+    exit 1
+fi
+
+SOURCE=$1
+OUTPUT="${SOURCE%.cpp}"
+
+# Flags:
+# -std=c++17: Modern Standard
+# -O2: Optimization level 2
+# -Wall -Wextra: Warnings
+# -Wshadow: Detect shadowing variables
+# -DLOCAL: Define LOCAL macro for condicional debugging 
+
+g++ -std=c++17 -O2 \
+    -Wall -Wextra -Wshadow \
+    -DLOCAL \
+    "$SOURCE" -o "$OUTPUT"
+
+if [ $? -eq 0 ]; then
+    echo "✓ Compiled: $OUTPUT"
+    echo "Run: ./$OUTPUT"
+else
+    echo "✗ Compilation failed"
+    exit 1
+fi
