@@ -12,10 +12,10 @@ if [[ "$STATUS" == "Discharging" ]]; then
     if (( CAPACITY <= 5 )) && [[ "$LAST" != "empty" ]]; then
         notify-send -u critical "Battery Empty" "${CAPACITY}% remaining"
         echo "empty" > "$STATE_FILE"
-    elif (( CAPACITY <= 15 )) && [[ "$LAST" != "critical" ]]; then
+      elif (( CAPACITY > 5 )) && (( CAPACITY <= 15 )) && [[ "$LAST" != "critical" ]]; then
         notify-send -u critical "Battery Critical" "${CAPACITY}% remaining"
         echo "critical" > "$STATE_FILE"
-    elif (( CAPACITY <= 30 )) && [[ "$LAST" != "low" ]]; then
+      elif (( CAPACITY > 15 )) && (( CAPACITY <= 30 )) && [[ "$LAST" != "low" ]]; then
         notify-send -u normal "Battery Low" "${CAPACITY}% remaining"
         echo "low" > "$STATE_FILE"
     elif (( CAPACITY > 30 )); then
