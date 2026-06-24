@@ -28,5 +28,10 @@ git clone https://github.com/yarso-su/dotfiles.git ~/dotfiles
 - **noto-fonts** - Basic fonts ("noto-fonts", "noto-fonts-cjk", "noto-fonts-extra", "noto-fonts-emoji")
 - **rofimoji** - Emoji picker (dmenu compatible) (requires "xdotool")
 
+#### NvChad Preferred themes
+
+- catppuccin-latter
+- solarized_osaka
+
 > [!NOTE]
 > All content in this repository is free to use. Feel free to use it as a reference or integrate it directly into your own configuration.
