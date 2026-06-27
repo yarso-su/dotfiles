@@ -1,0 +1,25 @@
+#!/bin/sh
+
+NOTIF_ID=9979
+
+if [ "$1" = "up" ]; then
+  wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+  volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%.0f", $2 * 100}')
+  notify-send -r "$NOTIF_ID" "Volume Up: $volume%"
+elif [ "$1" = "down" ]; then
+  wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+
+  volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf "%.0f", $2 * 100}')
+  notify-send -r "$NOTIF_ID" "Volume Down: $volume%"
+elif [ "$1" = "mute" ]; then
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+  if wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q '\[MUTED\]'; then
+      notify-send -r "$NOTIF_ID" "Muted"
+  else
+      notify-send -r "$NOTIF_ID" "Unmuted"
+  fi
+else
+  echo "volume-control: first argument must be 'up', 'down', or 'mute'"
+fi
