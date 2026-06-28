@@ -31,8 +31,8 @@ bindsym XF86AudioRaiseVolume exec volume-control up
 bindsym XF86AudioLowerVolume exec volume-control down
 bindsym XF86AudioMute exec volume-control mute
 
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +1% && notify-send "Brightness Up" 
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%- && notify-send "Brightness Down"
+bindsym XF86MonBrightnessUp exec brightness-control up 
+bindsym XF86MonBrightnessDown exec brightness-control down
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 bindsym Shift+Print exec maim -s --hidecursor ~/Pictures/Screenshots/$(date +'%Y%m%d-%H%M%S').png

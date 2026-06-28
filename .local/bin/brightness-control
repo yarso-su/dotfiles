@@ -1,0 +1,19 @@
+#!/bin/sh
+
+NOTIF_ID=9997
+
+if [ "$1" = "up" ]; then
+  brightnessctl set +1%
+
+  value=$(brightnessctl -m | cut -d, -f4)
+
+  notify-send -r "$NOTIF_ID" "Brightness Up: $value"
+elif [ "$1" = "down" ]; then
+  brightnessctl set 1%-
+
+  value=$(brightnessctl -m | cut -d, -f4)
+
+  notify-send -r "$NOTIF_ID" "Brightness Down: $value"
+else
+  echo "brightness-control: first argument must be 'up' or 'down'"
+fi
