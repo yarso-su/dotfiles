@@ -4,19 +4,22 @@ general {
 }
 
 
+battery all {
+ last_full_capacity = true
+ format_percentage = "%.0f%s"
+ format = "Fairy Dust: %percentage"
+ threshold_type = "percentage"
+ low_threshold = 15
+}
+order += "battery all"
+
+
 memory {
   format = "%used"
   threshold_degraded = "10%"
   format_degraded = "<span color='#FF0000'>%free</span>"
 }
 order += "memory"
-
-
-battery all {
- format = "Fairy Dust: %percentage"
- last_full_capacity = true
-}
-order += "battery all"
 
 
 tztime date {
