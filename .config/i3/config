@@ -177,7 +177,7 @@ bar {
         position bottom
         mode hide
         hidden_state hide
-        modifier Mod1
+        modifier Mod2
 
         font pango:UbuntuNerf Font Mono 10
 
