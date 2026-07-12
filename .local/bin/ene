@@ -1,0 +1,5 @@
+#!/bin/sh
+
+printf 'ñ' | xclip -selection clipboard
+
+notify-send "Copied to clipboard"

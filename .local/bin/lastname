@@ -1,0 +1,5 @@
+#!/bin/sh
+
+printf 'Ríos' | xclip -selection clipboard
+
+notify-send "Copied to clipboard"
