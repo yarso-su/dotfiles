@@ -36,6 +36,6 @@ order += "tztime time"
 
 wireless _first_ {
   format_up = "%essid"
-  format_down = "W: down"
+  format_down = ""
 }
 order += "wireless _first_"
