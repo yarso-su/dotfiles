@@ -3,31 +3,36 @@ general {
   interval = 5
 }
 
-order += "wireless _first_"
-order += "memory"
-order += "tztime local"
-order += "battery all"
-
-wireless _first_ {
-  format_up = "%essid"
-  format_down = "W: down"
-}
 
 memory {
   format = "%used"
   threshold_degraded = "10%"
   format_degraded = "<span color='#FF0000'>%free</span>"
 }
+order += "memory"
 
-tztime local {
-  format = "%H:%M %d/%m"
- }
 
- battery all {
-   format = "%status %percentage"
-   status_chr = "C"
-   status_bat = "B"
-   status_full = "F"
-   low_threshold = 10
-   last_full_capacity = true
- }
+battery all {
+ format = "Fairy Dust: %percentage"
+ last_full_capacity = true
+}
+order += "battery all"
+
+
+tztime date {
+  format = "%d-%m-%Y"
+}
+order += "tztime date"
+
+
+tztime time {
+  format = "%H:%M"
+}
+order += "tztime time"
+
+
+wireless _first_ {
+  format_up = "%essid"
+  format_down = "W: down"
+}
+order += "wireless _first_"
