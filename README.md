@@ -12,7 +12,6 @@ The most important pieces that make this setup work for me:
 
 - **tmux** — Session and window management
 - **Neovim** — Primary editor with LSP support and minimal configuration
-- **zsh** — Shell with custom aliases and utilities
 
 ## Installation
 
@@ -22,11 +21,15 @@ Clone the repository and create symlinks as needed:
 git clone https://github.com/yarso-su/dotfiles.git ~/dotfiles
 # Create symlinks manually based on your preferences
 ```
+### Nice to have
 
-### Optional
+`xclip`, `maim`, `dunst`, `lsd`, `brightnessctl`, and `nautilus`.
+
+#### Completely optional
 
 - **noto-fonts** - Basic fonts ("noto-fonts", "noto-fonts-cjk", "noto-fonts-extra", "noto-fonts-emoji")
 - **rofimoji** - Emoji picker (dmenu compatible) (requires "xdotool")
+- **imagemagick** - Image manipulation (requires "xclip")
 
 #### NvChad Preferred themes
 

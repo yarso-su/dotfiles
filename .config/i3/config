@@ -41,8 +41,8 @@ bindsym XF86AudioMute exec volume-control mute
 bindsym XF86MonBrightnessUp exec brightness-control up 
 bindsym XF86MonBrightnessDown exec brightness-control down
 
-# maim keyboard shortcut
-bindsym Shift+Print exec maim -s --hidecursor ~/Pictures/Screenshots/$(date +'%Y%m%d-%H%M%S').png
+# screenshot, save to Pictures/Screenshots and copy to clipboard (maim)
+bindsym Print exec maim -s --hidecursor | tee ~/Pictures/Screenshots/$(date +'%Y%m%d-%H%M%S').png | xclip -selection clipboard -t image/png
 
 # split in horizontal orientation
 bindsym $mod+h split h
