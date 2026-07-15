@@ -23,7 +23,7 @@ git clone https://github.com/yarso-su/dotfiles.git ~/dotfiles
 ```
 ### Nice to have
 
-`xclip`, `maim`, `dunst`, `lsd`, `brightnessctl`, and `nautilus`.
+`xclip`, `maim`, `dunst`, `lsd`, `brightnessctl`, `nautilus`, `picom`, and `less`.
 
 #### Completely optional
 
