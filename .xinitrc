@@ -9,7 +9,7 @@ sleep 0.3
 xmodmap -e "clear Lock"
 xmodmap -e "keycode 66 = Right"
 
-feh --bg-fill ~/Pictures/Wallpapers/wp47.jpg
+feh --bg-fill ~/Images/Wallpapers/wp47.jpg
 
 systemctl --user import-environment DISPLAY XAUTHORITY
 dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
