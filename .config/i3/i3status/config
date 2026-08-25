@@ -13,6 +13,10 @@ battery all {
 }
 order += "battery all"
 
+cpu_usage {
+    format = "CPU: %usage"
+}
+order += "cpu_usage"
 
 memory {
   format = "%used"

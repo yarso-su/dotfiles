@@ -8,8 +8,7 @@ set $mod Mod4
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color 0c0c0c
 
-# set initial values for xinput
-exec_always xinput set-prop 9 327 1
+# enable tap to click
 exec_always xinput set-prop 9 329 1
 
 # ---- KEYBINDINGS ----
@@ -20,13 +19,13 @@ bindsym $mod+Return exec --no-startup-id kitty
 # kill focused window
 bindsym $mod+q kill
 
-# start dmenu (a program launcher)
+# start dmenu
 bindsym $mod+d exec --no-startup-id dmenu_run -nb '#0c0c0c' -sb '#333333' -sf '#ffffff' -fn "Ubuntu Nerd Font Mono-8" -p 'Command '
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart i3 inplace
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
@@ -42,7 +41,7 @@ bindsym XF86MonBrightnessUp exec brightness-control up
 bindsym XF86MonBrightnessDown exec brightness-control down
 
 # screenshot, save to Pictures/Screenshots and copy to clipboard (maim)
-bindsym Print exec maim -s --hidecursor | tee ~/Pictures/Screenshots/$(date +'%Y%m%d-%H%M%S').png | xclip -selection clipboard -t image/png
+bindsym Print exec maim -s --hidecursor | tee ~/Images/Screenshots/$(date +'%Y%m%d-%H%M%S').png | xclip -selection clipboard -t image/png
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -79,6 +78,7 @@ bindsym $mod+space focus mode_toggle
 
 bar {
         status_command i3status -c ~/.config/i3/i3status/config
+        i3bar_command i3bar --transparency
 
         position bottom
         mode hide
@@ -90,6 +90,7 @@ bar {
         colors {
           focused_workspace #333333 #333333 #ffffff
           inactive_workspace #222222 #222222 #aaaaaa
+          background #00000066
         }
 
         tray_output primary
