@@ -16,6 +16,9 @@ alias ls="lsd"
 # custom scripts
 export PATH="$HOME/.local/bin:$PATH"
 
+# go
+export PATH="$HOME/go/bin:$PATH"
+
 
 # flutter
 export PATH="$HOME/flutter/bin:$PATH"

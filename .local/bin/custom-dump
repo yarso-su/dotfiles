@@ -1,0 +1,13 @@
+#!/bin/sh
+
+mkdir tmp
+cd tmp
+
+pg_dump -h postgres.railway.internal -p 5432 -U postgres -d railway --format=custom --file="$(date +'%Y-%m-%d=%H:%M:%S').dump"
+
+cd ../
+rm ./*.dump
+
+cp ./tmp/*.dump .
+
+rm -rf ./tmp
