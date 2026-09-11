@@ -12,7 +12,6 @@ alias vi="nvim"
 alias tm="tmux"
 alias ls="lsd"
 
-
 # custom scripts
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -34,14 +33,6 @@ export PATH="$HOME/.pub-cache/bin:$PATH"
 #fnm
 export PATH="/home/yarso/.local/share/fnm:$PATH"
 eval "`fnm env`"
-
-
-# pnpm
-export PNPM_HOME="/home/yarso/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
 
 
 # vi mode
@@ -72,6 +63,14 @@ if [ -f "$SSH_ENV" ]; then
 else
     start_agent
 fi
+
+# pnpm
+export PNPM_HOME='/home/yarso/.local/share/pnpm'
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
 
 
 ## [Completion]
