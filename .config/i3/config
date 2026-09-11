@@ -115,6 +115,9 @@ gaps inner 0
 gaps outer 0
 for_window [class=".*"] border pixel 0
 
+# fix-mic window
+for_window [class="fix-mic"] floating enable, resize set 500 200, move position center
+
 # ---- RESIZE MODE ----
 
 mode "resize" {

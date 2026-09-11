@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo -n "0000:05:00.6" | sudo tee /sys/bus/pci/drivers/snd_hda_intel/unbind
+echo -n "0000:05:00.6" | sudo tee /sys/bus/pci/drivers/snd_hda_intel/bind

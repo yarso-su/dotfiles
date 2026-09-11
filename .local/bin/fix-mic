@@ -1,0 +1,3 @@
+#!/bin/sh
+
+kitty --class=fix-mic -e sudo ~/.local/bin/reinitialize-snd-hda-intel
